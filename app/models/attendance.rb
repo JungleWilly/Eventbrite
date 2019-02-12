@@ -1,5 +1,5 @@
 class Attendance < ApplicationRecord
-  after_create :attendance_send
+  #after_create :attendance_send
 
   def attendance_send
     UserMailer.new_attendance(self).deliver_now
