@@ -15,7 +15,7 @@ require 'faker'
 end
 
 15.times do
-  Event.create!(start_date: Faker::Time.between(DateTime.now, DateTime.now + 1), duration: 5, title: Faker::Movie.quote, description: Faker::Lorem.characters(25), price: Faker::Number.between(1, 1000), location: Faker::Address.city)
+  Event.create!(user: User.all.sample, start_date: Faker::Time.between(DateTime.now, DateTime.now + 1), duration: 5, title: Faker::Movie.quote, description: Faker::Lorem.characters(25), price: Faker::Number.between(1, 1000), location: Faker::Address.city)
 end
 
 30.times do
