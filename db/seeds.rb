@@ -11,6 +11,7 @@ Attendance.destroy_all
 require 'faker'
 
 10.times do
+  
   User.create!(email: Faker::Internet.email, password: 'blabla', description: Faker::ChuckNorris.fact, first_name: Faker::FunnyName.name, last_name: Faker::DrWho.catch_phrase)
 end
 

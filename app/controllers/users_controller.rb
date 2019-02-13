@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:show]
+  
   def index
   end
 
@@ -9,6 +11,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @user_events = @user.created_events
+    puts @user_events
   end
 
   def edit
@@ -18,5 +23,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def same_id
+    unless current_user == (params[:id]).to_i
+      redirect_to new_user_session_path
+    else
+
+    end
   end
 end

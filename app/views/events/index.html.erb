@@ -1,2 +1,27 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="jumbotron">
+  <h1 class="display-3">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="<%= new_event_path %>" role="button">Créer un nouvel évènement</a>
+  </p>
+</div>
+
+<div class="row">
+
+<% @event.each do |i| %>
+<div class="card col-sm-3 text-center">
+  <div class="card-header">
+    <p>event n°<%= i.id %></p>
+  </div>
+  <div class="card-header">
+    <h5 class="card-title"><%= i.title %></h5>
+    <p class="card-text"><%= i.description %></p>
+    <a href= "<%= user_path(i.id)%>" class="btn btn-primary">En savoir plus</a>
+  </div>
+</div>
+<% end %>
+
+</div>
+

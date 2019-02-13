@@ -1,2 +1,29 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Infos Utilisateur</h1>
+
+<h3>Prénom:</h3>
+<p><%=@user.first_name %></p>
+
+<h3>Nom:</h3>
+<p><%=@user.last_name %></p>
+
+<h3>Email:</h3>
+<p><%=@user.email %></p>
+
+<h3>Description:</h3>
+<p><%=@user.description %></p>
+
+<div class="row">
+<% @user_events.each do |i| %>
+<div class="card col-sm-3 text-center">
+  <div class="card-header">
+    <p>potin n°<%= i.id %></p>
+  </div>
+  <div class="card-header">
+    <h5 class="card-title"> : <%= i.title %></h5>
+    <a href= "<%= event_path(i.id)%>" class="btn btn-primary">En savoir plus</a>
+  
+  </div>
+</div>
+<% end %>
+
+</div>
