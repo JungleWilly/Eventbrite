@@ -1,0 +1,21 @@
+<h1>Attendances#index</h1>
+<p>Find me in app/views/attendances/index.html.erb</p>
+
+ 
+
+<div class="row">
+
+<% @all.each do |i| %>
+<div class="card col-sm-3 text-center">
+  <div class="card-header">
+    <p>user n°<%= i.user_id %></p>
+  </div>
+  <div class="card-header">
+    <h5 class="card-title"><%= i.user.first_name %></h5>
+    <p class="card-text"><%= i.user.email %></p>
+  </div>
+</div>
+<% end %>
+
+</div>
+<a href= "<%= edit_event_path(@event_id) %>" class="btn btn-outline-primary">Edit event</a>

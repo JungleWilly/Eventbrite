@@ -27,3 +27,9 @@
 
 <h3>Nombre de participant :</h3>
 <p><%=@event.attendances.length%></p>
+
+<% if @subscriber %>
+  <a href= "<%= attendances_new_path %>" class="btn btn-outline-primary">Inscris toi !</a>
+<% elsif @admin %>
+  <%= link_to "Voir les participants", {:controller => "attendances", :action => "index", :event => @event.id}, class:"btn btn-outline-primary" %>
+<%end%>

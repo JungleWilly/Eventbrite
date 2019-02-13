@@ -20428,3 +20428,2057 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 82ms (Views: 45.9ms | ActiveRecord: 11.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-13 16:12:45 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 45ms (Views: 42.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 17:59:47 +0100
+  [1m[35m (24.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (50.0ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 641ms (Views: 553.4ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:00:07 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 257ms (Views: 52.7ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-13 18:00:11 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mAttendance Load (48.8ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 89ms (Views: 29.6ms | ActiveRecord: 50.4ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-13 18:00:17 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 3], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (2.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 63ms (Views: 53.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/events/16" for 127.0.0.1 at 2019-02-13 18:00:23 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 16]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 39ms (Views: 31.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events/16" for 127.0.0.1 at 2019-02-13 18:00:40 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 16]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 42ms (Views: 31.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-02-13 18:00:42 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 53ms (Views: 44.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:00:55 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:00:58 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 54ms (Views: 46.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:09:07 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 8.0ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...s_user_new_for_event? == true );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+Started PUT "/__web_console/repl_sessions/b4b423ea7dd6a238bbfa70d63c9c5a9f" for 127.0.0.1 at 2019-02-13 18:09:36 +0100
+Started PUT "/__web_console/repl_sessions/b4b423ea7dd6a238bbfa70d63c9c5a9f" for 127.0.0.1 at 2019-02-13 18:09:37 +0100
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:10:00 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...d=( if is_user_new_for_event? );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:10:48 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 9.9ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...d=( if is_user_new_for_event? );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:10:50 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (4.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:10:53 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...d=( if is_user_new_for_event? );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:11:32 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 9.5ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...uffer.append=( if @subscriber );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+Started PUT "/__web_console/repl_sessions/be2430b957b31f4ab4cac8a7485f4a66" for 127.0.0.1 at 2019-02-13 18:11:45 +0100
+Started PUT "/__web_console/repl_sessions/be2430b957b31f4ab4cac8a7485f4a66" for 127.0.0.1 at 2019-02-13 18:11:48 +0100
+Started PUT "/__web_console/repl_sessions/be2430b957b31f4ab4cac8a7485f4a66" for 127.0.0.1 at 2019-02-13 18:12:02 +0100
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:12:33 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (1.3ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 1], ["user_id", 2], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mAttendance Load (33.2ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."id" IS NULL LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Attendance Load (0.1ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."id" IS NULL LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Attendance Load (0.1ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."id" IS NULL LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Attendance Load (0.1ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."id" IS NULL LIMIT $2[0m  [["event_id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 385927ms (ActiveRecord: 49.9ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...uffer.append=( if @subscriber );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+app/views/events/show.html.erb:35: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+Started PUT "/__web_console/repl_sessions/5c40221fa4b4722cf259002f253882af" for 127.0.0.1 at 2019-02-13 18:19:17 +0100
+Started PUT "/__web_console/repl_sessions/5c40221fa4b4722cf259002f253882af" for 127.0.0.1 at 2019-02-13 18:19:19 +0100
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:19:51 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 127874ms (ActiveRecord: 8.5ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...uffer.append=( if @subscriber );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:22:18 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 17381ms (ActiveRecord: 1.4ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...uffer.append=( if @subscriber );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:23:17 +0100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 12691ms (ActiveRecord: 13.8ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...uffer.append=( if @subscriber );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:23:35 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 12428ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...uffer.append=( if @subscriber );@output_buffer.safe_append='
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:31: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/events/show.html.erb:36: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:38: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:24:54 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (5.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 312ms (Views: 308.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:25:09 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 163ms (Views: 100.4ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-13 18:25:14 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mAttendance Load (1.3ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."id" IS NULL LIMIT $2[0m  [["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 404 Not Found in 12ms (ActiveRecord: 2.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Attendance with 'id'={:user_id=>2} [WHERE "attendances"."event_id" = $1]):
+  
+app/controllers/application_controller.rb:9:in `is_user_new_for_event?'
+Started GET "/events/2" for 127.0.0.1 at 2019-02-13 18:26:34 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."id" IS NULL LIMIT $2[0m  [["event_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 404 Not Found in 15ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Attendance with 'id'={:user_id=>2} [WHERE "attendances"."event_id" = $1]):
+  
+app/controllers/application_controller.rb:9:in `is_user_new_for_event?'
+Started GET "/events/2" for 127.0.0.1 at 2019-02-13 18:28:26 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 111ms (Views: 44.8ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-13 18:31:01 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mAttendance Load (0.8ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 59ms (Views: 31.7ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-13 18:34:33 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 115ms (Views: 53.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:34:37 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2019-02-13 18:34:37 +0100
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (1426.8ms)
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:34:39 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (3.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 1514ms (Views: 1492.6ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 81ms (Views: 66.8ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-13 18:34:40 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (1.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 57ms (Views: 33.8ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-13 18:34:44 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 3], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 3], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 51ms (Views: 33.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2019-02-13 18:35:06 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 3], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 3], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 3]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 47ms (Views: 30.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:35:45 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (8.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 47ms (Views: 37.8ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:35:47 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 60ms (Views: 29.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:36:47 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 124927ms (Views: 59.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:38:55 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 8147ms (Views: 53.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:39:29 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 108ms (Views: 45.9ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:39:48 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:39:54 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (5.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 45ms (Views: 42.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-02-13 18:39:56 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 52ms (Views: 37.1ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:53:17 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (31.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 448ms (Views: 392.4ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:53:18 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:53:23 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 191ms (Views: 90.3ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/attendances/index" for 127.0.0.1 at 2019-02-13 18:53:27 +0100
+Processing by AttendancesController#index as HTML
+  Rendering attendances/index.html.erb within layouts/application
+  Rendered attendances/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-13 18:53:33 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 64ms (Views: 36.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/attendances/new" for 127.0.0.1 at 2019-02-13 18:53:36 +0100
+Processing by AttendancesController#new as HTML
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 38ms (Views: 35.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 18:53:41 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 18:59:41 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (1.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 82ms (Views: 50.8ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/attendances/index" for 127.0.0.1 at 2019-02-13 18:59:43 +0100
+Processing by AttendancesController#index as HTML
+  Rendering attendances/index.html.erb within layouts/application
+  Rendered attendances/index.html.erb within layouts/application (406.2ms)
+Completed 500 Internal Server Error in 410ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `edit_event_path_path' for #<#<Class:0x00007f94c0521190>:0x00007f94c849da90>
+Did you mean?  edit_event_path):
+    1: <h1>Attendances#index</h1>
+    2: <p>Find me in app/views/attendances/index.html.erb</p>
+    3: 
+    4:  <a href= "<%= edit_event_path_path %>" class="btn btn-outline-primary">Edit event</a>
+  
+app/views/attendances/index.html.erb:4:in `_app_views_attendances_index_html_erb__1630640054360267025_70138496092660'
+Started GET "/attendances/index" for 127.0.0.1 at 2019-02-13 19:00:06 +0100
+Processing by AttendancesController#index as HTML
+  Rendering attendances/index.html.erb within layouts/application
+  Rendered attendances/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"events"}, missing required keys: [:id]):
+    1: <h1>Attendances#index</h1>
+    2: <p>Find me in app/views/attendances/index.html.erb</p>
+    3: 
+    4:  <a href= "<%= edit_event_path %>" class="btn btn-outline-primary">Edit event</a>
+  
+app/views/attendances/index.html.erb:4:in `_app_views_attendances_index_html_erb__1630640054360267025_70138498120540'
+Started GET "/attendances/index" for 127.0.0.1 at 2019-02-13 19:10:28 +0100
+Processing by AttendancesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+Completed 404 Not Found in 50ms (ActiveRecord: 15.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'={:creator_id=>2}):
+  
+app/controllers/attendances_controller.rb:5:in `index'
+Started GET "/attendances/index" for 127.0.0.1 at 2019-02-13 19:12:12 +0100
+Processing by AttendancesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'={:creator_id=>2}):
+  
+app/controllers/attendances_controller.rb:5:in `index'
+Started GET "/attendances/index" for 127.0.0.1 at 2019-02-13 19:15:29 +0100
+Processing by AttendancesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+Completed 404 Not Found in 6ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'={:creator_id=>2}):
+  
+app/controllers/attendances_controller.rb:5:in `index'
+Started PUT "/__web_console/repl_sessions/b8aab52a40483ff61c04e860ae43affc" for 127.0.0.1 at 2019-02-13 19:15:35 +0100
+Started PUT "/__web_console/repl_sessions/b8aab52a40483ff61c04e860ae43affc" for 127.0.0.1 at 2019-02-13 19:15:36 +0100
+Started GET "/attendances/index" for 127.0.0.1 at 2019-02-13 19:19:07 +0100
+Processing by AttendancesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+Completed 404 Not Found in 6ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'={:creator_id=>2}):
+  
+app/controllers/attendances_controller.rb:5:in `index'
+Started GET "/attendances/index" for 127.0.0.1 at 2019-02-13 19:19:10 +0100
+Processing by AttendancesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+Completed 404 Not Found in 5ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event with 'id'={:creator_id=>2}):
+  
+app/controllers/attendances_controller.rb:5:in `index'
+Started GET "/attendances/index" for 127.0.0.1 at 2019-02-13 19:20:48 +0100
+Processing by AttendancesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  Rendering attendances/index.html.erb within layouts/application
+  Rendered attendances/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 113ms (Views: 56.4ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/events/16/edit" for 127.0.0.1 at 2019-02-13 19:20:57 +0100
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 90ms (Views: 36.0ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 19:21:09 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 47ms (Views: 42.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 19:21:12 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:34: syntax error, unexpected =>, expecting '}'
+...nces_index_path {:controller => "attendances", :action => "i...
+...                             ^~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:34: syntax error, unexpected ',', expecting ')'
+... {:controller => "attendances", :action => "index", :event =...
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:34: syntax error, unexpected ',', expecting ')'
+...tendances", :action => "index", :event => @event.id} );@outp...
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:34: syntax error, unexpected '}', expecting ')'
+...> "index", :event => @event.id} );@output_buffer.safe_append...
+...                              ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;end
+         ^~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:39: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/events/show.html.erb:34: syntax error, unexpected =>, expecting '}'
+app/views/events/show.html.erb:34: syntax error, unexpected ',', expecting ')'
+app/views/events/show.html.erb:34: syntax error, unexpected ',', expecting ')'
+app/views/events/show.html.erb:34: syntax error, unexpected '}', expecting ')'
+app/views/events/show.html.erb:35: syntax error, unexpected keyword_end, expecting ')'
+app/views/events/show.html.erb:37: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/events/show.html.erb:39: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 19:22:51 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 81ms (Views: 60.9ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 19:22:55 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  Rendering attendances/index.html.erb within layouts/application
+  Rendered attendances/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 37ms (Views: 31.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/16/edit" for 127.0.0.1 at 2019-02-13 19:23:00 +0100
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 41ms (Views: 36.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events/16/edit" for 127.0.0.1 at 2019-02-13 19:23:51 +0100
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 81ms (Views: 48.4ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 19:23:53 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 93ms (Views: 48.9ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 19:23:55 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.1ms)
+
+
+  
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `id' for #<Event::ActiveRecord_Relation:0x00007f94c86cc398>
+Did you mean?  ids):
+  
+app/controllers/attendances_controller.rb:6:in `index'
+Started PUT "/__web_console/repl_sessions/84978c264c317599ae59e27fd15b6b71" for 127.0.0.1 at 2019-02-13 19:24:11 +0100
+Started PUT "/__web_console/repl_sessions/84978c264c317599ae59e27fd15b6b71" for 127.0.0.1 at 2019-02-13 19:24:12 +0100
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 11]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 19:26:04 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `id' for #<Event::ActiveRecord_Relation:0x00007f94c0d36420>
+Did you mean?  ids):
+  
+app/controllers/attendances_controller.rb:6:in `index'
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 19:26:08 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 52ms (Views: 39.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 19:26:11 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `id' for #<Event::ActiveRecord_Relation:0x00007f94c88d18a0>
+Did you mean?  ids):
+  
+app/controllers/attendances_controller.rb:6:in `index'
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 19:26:19 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 11]]
+  ↳ /usr/share/rvm/rubies/ruby-2.5.1/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered attendances/index.html.erb within layouts/application (41.0ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Event::ActiveRecord_Relation:0x00007f94cd274ca0>
+Did you mean?  ids):
+    1: <h1>Attendances#index</h1>
+    2: <p>Find me in app/views/attendances/index.html.erb</p>
+    3: 
+    4:  <a href= "<%= edit_event_path(@event.id) %>" class="btn btn-outline-primary">Edit event</a>
+    5: 
+    6: <div class="row">
+    7: 
+  
+app/views/attendances/index.html.erb:4:in `_app_views_attendances_index_html_erb__1630640054360267025_70138536384520'
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 19:27:32 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 44ms (Views: 37.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/events/16/edit" for 127.0.0.1 at 2019-02-13 19:27:46 +0100
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 56ms (Views: 47.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:29:27 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.3ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/layouts/application.html.erb:31: syntax error, unexpected '='
+...n_path, method: :delete, class="dropdown-item text-center" )...
+...                              ^):
+  
+app/views/layouts/application.html.erb:31: syntax error, unexpected '='
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:29:48 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:5
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."creator_id" = $1 LIMIT $2[0m  [["creator_id", 2], ["LIMIT", 11]]
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:36:27 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/attendances_controller.rb:5:in `index'
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:36:43 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+Completed 500 Internal Server Error in 299ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `event' for #<AttendancesController:0x00007f94c47f5a48>
+Did you mean?  event_url):
+  
+app/controllers/attendances_controller.rb:5:in `index'
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:37:20 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:6
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 165ms (Views: 128.5ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:38:09 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of Integer into String):
+  
+app/controllers/attendances_controller.rb:5:in `+'
+app/controllers/attendances_controller.rb:5:in `index'
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:38:18 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:7
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (55.1ms)
+Completed 200 OK in 168ms (Views: 95.4ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:38:59 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:8
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 84144ms (Views: 44.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:40:26 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+Started GET "/" for 127.0.0.1 at 2019-02-13 22:40:41 +0100
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:8
+Processing by EventsController#index as HTML
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  Rendering events/index.html.erb within layouts/application
+  ↳ app/views/attendances/index.html.erb:8
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (3.6ms)
+  Rendered attendances/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 15116ms (Views: 74.9ms | ActiveRecord: 16.8ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 109ms (Views: 102.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 22:40:44 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (16.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 92ms (Views: 81.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 22:40:49 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (4.1ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 49ms (Views: 46.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-02-13 22:40:53 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 211ms (Views: 46.9ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 22:40:58 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (7.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 22:40:59 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (1.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (77.2ms)
+Completed 200 OK in 124ms (Views: 96.6ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:41:01 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:8
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 42ms (Views: 36.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:41:17 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:45:02 +0100
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:8
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 224887ms (Views: 55.2ms | ActiveRecord: 1.2ms)
+
+
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:9
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 4040ms (Views: 58.4ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:45:11 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:9
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 128245ms (Views: 75.4ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:47:22 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:8
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 97ms (Views: 57.9ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 22:48:37 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 129ms (Views: 55.8ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:48:40 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:6
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 57ms (Views: 49.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:49:01 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:7
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 73838ms (Views: 54.2ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:50:20 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:7
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 97ms (Views: 56.9ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:50:56 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:7
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 103ms (Views: 64.6ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 22:55:09 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  [1m[36mAttendance Load (1.3ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/attendances/index.html.erb:8
+  Rendered attendances/index.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 245159ms (ActiveRecord: 7.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for 10:Integer):
+    11:     <p>user n°<%= i.user_id %></p>
+    12:   </div>
+    13:   <div class="card-header">
+    14:     <h5 class="card-title"><%= i.user_id.first_name %></h5>
+    15:     <p class="card-text"><%= i.user_id.email %></p>
+    16:   </div>
+    17: </div>
+  
+app/views/attendances/index.html.erb:14:in `block in _app_views_attendances_index_html_erb__1630640054360267025_70138498213340'
+app/views/attendances/index.html.erb:8:in `_app_views_attendances_index_html_erb__1630640054360267025_70138498213340'
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 23:00:17 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/attendances/index.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  Rendered attendances/index.html.erb within layouts/application (28.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 80ms (Views: 71.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 23:00:46 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/attendances/index.html.erb:8
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  Rendered attendances/index.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 16667ms (Views: 64.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2019-02-13 23:01:07 +0100
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 78ms (Views: 42.2ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 23:01:30 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (23.0ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 70ms (Views: 56.8ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-02-13 23:01:37 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 55ms (Views: 46.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 23:01:41 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 55ms (Views: 51.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 23:01:42 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 84ms (Views: 63.0ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-13 23:01:44 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/attendances/index.html.erb:8
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  Rendered attendances/index.html.erb within layouts/application (30.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 81ms (Views: 75.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events/1/edit" for 127.0.0.1 at 2019-02-13 23:01:47 +0100
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 23:01:56 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (6.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 52ms (Views: 47.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 23:01:58 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 64ms (Views: 48.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 23:02:46 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 53ms (Views: 40.7ms | ActiveRecord: 1.8ms)
+
+

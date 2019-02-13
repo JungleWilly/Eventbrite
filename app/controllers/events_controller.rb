@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create, :edit]
-
+  before_action :is_user_new_for_event?, only: [:show]
   def index
     @event = Event.all
   end
@@ -20,6 +20,8 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @end_date = @event.start_date + @event.duration
+    @subscriber = is_user_new_for_event?
+    @admin = is_admin?
   end
 
   def edit
