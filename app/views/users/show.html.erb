@@ -12,6 +12,9 @@
 <h3>Description:</h3>
 <p><%=@user.description %></p>
 
+<a href= "<%= edit_user_registration_path%>" class="btn btn-outline-primary">Editer info connexion</a>
+<a href= "<%= edit_user_path %>" class="btn btn-outline-primary">Editer info profil</a>
+
 <div class="row">
 <% @user_events.each do |i| %>
 <div class="card col-sm-3 text-center">

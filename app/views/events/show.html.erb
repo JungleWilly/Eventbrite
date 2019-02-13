@@ -1,2 +1,29 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<h1>Infos Evènement</h1>
+
+
+<h3>Titre :</h3>
+<p><%=@event.title %></p>
+
+<h3>Description :</h3>
+<p><%=@event.description %></p>
+
+<h3>Date :</h3>
+<p><%=@event.start_date %></p>
+
+<h3>Durée :</h3>
+<p><%=@event.duration %> min</p>
+
+<h3>fin :</h3>
+<p><%=@end_date %></p>
+
+<h3>Prix :</h3>
+<p><%=@event.price %>euros</p>
+
+<h3>Lieu :</h3>
+<p><%=@event.location %></p>
+
+<h3>Créateur :</h3>
+<p><%=@event.creator.email %></p>
+
+<h3>Nombre de participant :</h3>
+<p><%=@event.attendances.length%></p>
