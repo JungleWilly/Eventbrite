@@ -22482,3 +22482,1614 @@ Processing by EventsController#show as HTML
 Completed 200 OK in 53ms (Views: 40.7ms | ActiveRecord: 1.8ms)
 
 
+Started GET "/events/1" for 127.0.0.1 at 2019-02-13 23:05:45 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 68ms (Views: 43.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 23:08:35 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (16.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 78ms (Views: 71.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-13 23:08:37 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 73ms (Views: 45.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/attendances/new" for 127.0.0.1 at 2019-02-13 23:09:07 +0100
+Processing by AttendancesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/attendances/new" for 127.0.0.1 at 2019-02-13 23:10:56 +0100
+Processing by AttendancesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-13 23:35:19 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (6.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    11:   </article>
+    12: 
+    13:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    14:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    15:           data-description="A month's subscription"
+    16:           data-amount="500"
+    17:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:14:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138461731260'
+app/views/charges/new.html.erb:1:in `_app_views_charges_new_html_erb__3879949698555716469_70138461731260'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-13 23:37:17 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (6.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    11:   </article>
+    12: 
+    13:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    14:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    15:           data-description="A month's subscription"
+    16:           data-amount="500"
+    17:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:14:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138498491820'
+app/views/charges/new.html.erb:1:in `_app_views_charges_new_html_erb__3879949698555716469_70138498491820'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-13 23:48:38 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (7.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    11:   </article>
+    12: 
+    13:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    14:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    15:           data-description="A month's subscription"
+    16:           data-amount="500"
+    17:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:14:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138437467620'
+app/views/charges/new.html.erb:1:in `_app_views_charges_new_html_erb__3879949698555716469_70138437467620'
+Started GET "/" for 127.0.0.1 at 2019-02-13 23:51:11 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (27.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 477ms (Views: 425.3ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-13 23:51:12 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 57ms (Views: 54.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-13 23:51:20 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (6.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    12:   </article>
+    13: 
+    14:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    15:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    16:           data-description="A month's subscription"
+    17:           data-amount="500"
+    18:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:15:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138361047120'
+app/views/charges/new.html.erb:2:in `_app_views_charges_new_html_erb__3879949698555716469_70138361047120'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-13 23:55:41 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (6.3ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    12:   </article>
+    13: 
+    14:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    15:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    16:           data-description="A month's subscription"
+    17:           data-amount="500"
+    18:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:15:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138431254420'
+app/views/charges/new.html.erb:2:in `_app_views_charges_new_html_erb__3879949698555716469_70138431254420'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-13 23:56:08 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (6.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    12:   </article>
+    13: 
+    14:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    15:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    16:           data-description="A month's subscription"
+    17:           data-amount="500"
+    18:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:15:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138461632600'
+app/views/charges/new.html.erb:2:in `_app_views_charges_new_html_erb__3879949698555716469_70138461632600'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-13 23:57:52 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (6.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    12:   </article>
+    13: 
+    14:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    15:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    16:           data-description="A month's subscription"
+    17:           data-amount="500"
+    18:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:15:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138462944540'
+app/views/charges/new.html.erb:2:in `_app_views_charges_new_html_erb__3879949698555716469_70138462944540'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:02:28 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (20.0ms)
+Completed 500 Internal Server Error in 114ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    12:   </article>
+    13: 
+    14:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    15:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    16:           data-description="A month's subscription"
+    17:           data-amount="500"
+    18:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:15:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138461750740'
+app/views/charges/new.html.erb:2:in `_app_views_charges_new_html_erb__3879949698555716469_70138461750740'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:05:46 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (8.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    12:   </article>
+    13: 
+    14:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    15:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    16:           data-description="A month's subscription"
+    17:           data-amount="500"
+    18:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:15:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138540367580'
+app/views/charges/new.html.erb:2:in `_app_views_charges_new_html_erb__3879949698555716469_70138540367580'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:09:45 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (68.9ms)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:1: syntax error, unexpected tCONSTANT, expecting ')'
+...ppend=( require 'dotenv' Dotenv.load );@output_buffer.safe_a...
+...                         ^~~~~~):
+  
+app/views/charges/new.html.erb:1: syntax error, unexpected tCONSTANT, expecting ')'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:10:24 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (22.7ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    13:   </article>
+    14: 
+    15:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    16:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    17:           data-description="A month's subscription"
+    18:           data-amount="500"
+    19:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:16:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138439777820'
+app/views/charges/new.html.erb:3:in `_app_views_charges_new_html_erb__3879949698555716469_70138439777820'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:12:16 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (7.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    13:   </article>
+    14: 
+    15:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    16:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    17:           data-description="A month's subscription"
+    18:           data-amount="500"
+    19:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:16:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138361784380'
+app/views/charges/new.html.erb:3:in `_app_views_charges_new_html_erb__3879949698555716469_70138361784380'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:13:37 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (8.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    13:   </article>
+    14: 
+    15:   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    16:           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    17:           data-description="A month's subscription"
+    18:           data-amount="500"
+    19:           data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:16:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138361941900'
+app/views/charges/new.html.erb:3:in `_app_views_charges_new_html_erb__3879949698555716469_70138361941900'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:13:58 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (6.4ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    11: </article>
+    12: 
+    13: <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    14: data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    15: data-description="Monthly subscription"
+    16: data-amount="500"
+    17: data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:14:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138435295020'
+app/views/charges/new.html.erb:1:in `_app_views_charges_new_html_erb__3879949698555716469_70138435295020'
+Started PUT "/__web_console/repl_sessions/ed242e558e67363b89565e0a3d204ba8" for 127.0.0.1 at 2019-02-14 00:14:09 +0100
+Started PUT "/__web_console/repl_sessions/ed242e558e67363b89565e0a3d204ba8" for 127.0.0.1 at 2019-02-14 00:14:10 +0100
+Started PUT "/__web_console/repl_sessions/ed242e558e67363b89565e0a3d204ba8" for 127.0.0.1 at 2019-02-14 00:14:21 +0100
+Started PUT "/__web_console/repl_sessions/ed242e558e67363b89565e0a3d204ba8" for 127.0.0.1 at 2019-02-14 00:14:22 +0100
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:15:27 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (6.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    11: </article>
+    12: 
+    13: <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    14: data-key="<%Rails.configuration.stripe[:publishable_key] %>"
+    15: data-description="Monthly subscription"
+    16: data-amount="500"
+    17: data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:14:in `block in _app_views_charges_new_html_erb__3879949698555716469_70138498366600'
+app/views/charges/new.html.erb:1:in `_app_views_charges_new_html_erb__3879949698555716469_70138498366600'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:17:13 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (7.2ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `stripe' for #<Rails::Application::Configuration:0x0000559f8dc5c308>):
+    11: </article>
+    12: 
+    13: <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    14: data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+    15: data-description="Monthly subscription"
+    16: data-amount="500"
+    17: data-locale="auto"></script>
+  
+app/views/charges/new.html.erb:14:in `block in _app_views_charges_new_html_erb__3879949698555716469_47071864149320'
+app/views/charges/new.html.erb:1:in `_app_views_charges_new_html_erb__3879949698555716469_47071864149320'
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:18:25 +0100
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (3.7ms)
+Completed 200 OK in 23ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:21:20 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/application
+  Rendered charges/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 861ms (Views: 765.7ms | ActiveRecord: 94.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-14 00:24:09 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (38.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 242ms (Views: 108.7ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 00:24:13 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (24.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (114.1ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 585ms (Views: 122.3ms | ActiveRecord: 145.6ms)
+
+
+Started GET "/attendances/new" for 127.0.0.1 at 2019-02-14 00:24:15 +0100
+Processing by AttendancesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 47.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/attendances/new" for 127.0.0.1 at 2019-02-14 00:24:29 +0100
+Processing by AttendancesController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 33ms (Views: 28.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-02-14 00:25:26 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 82ms (Views: 48.1ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 00:25:31 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PRWE9BflZCE8iSntD/ngObZ9xhmTLjJi97q6kgWsxN8QAwafpqYYi7lYZJCMx0+yUWbnI7WnkZ2x0ZaWNTyEmQ=="}
+Redirected to http://localhost:3000/charges/new
+Completed 302 Found in 1916ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:25:33 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 00:25:39 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PRWE9BflZCE8iSntD/ngObZ9xhmTLjJi97q6kgWsxN8QAwafpqYYi7lYZJCMx0+yUWbnI7WnkZ2x0ZaWNTyEmQ=="}
+Redirected to http://localhost:3000/charges/new
+Completed 302 Found in 1476ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2019-02-14 00:25:41 +0100
+Processing by ChargesController#new as HTML
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.7ms)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/attendances/new" for 127.0.0.1 at 2019-02-14 00:25:43 +0100
+Processing by AttendancesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 48ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 00:26:34 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bsgAF7o0emG9rsQ9q12vwpuDq8k9cAwJbbvy7hx9iIND3oJ8C3cGyzh/iUAoYwBJfJiK8xv5r/Yr0N7qLO3IxQ==", "stripeToken"=>"tok_1E3X7bJmmzBaWyW93L6EvbwR", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+  Rendering charges/create.html.erb within layouts/charges
+  Rendered charges/create.html.erb within layouts/charges (0.8ms)
+Completed 200 OK in 1904ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 00:31:10 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 68ms (Views: 38.9ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/attendances/new" for 127.0.0.1 at 2019-02-14 00:31:11 +0100
+Processing by AttendancesController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 48.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 00:42:49 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (1.1ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 19.8ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/events/show.html.erb:32: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+...attendances_new_path, :event => @event.id );@output_buffer.s...
+...                             ^~):
+  
+app/views/events/show.html.erb:32: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 00:44:12 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 70ms (Views: 53.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/attendances/new?event=2" for 127.0.0.1 at 2019-02-14 00:44:23 +0100
+Processing by AttendancesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/attendances/new?event=2" for 127.0.0.1 at 2019-02-14 00:45:40 +0100
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.6ms)
+Processing by AttendancesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 81301ms (Views: 4374.5ms | ActiveRecord: 4.6ms)
+
+
+Completed 200 OK in 4365ms (Views: 64.5ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 00:45:50 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.7ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 106ms (Views: 44.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/attendances/new?event=2" for 127.0.0.1 at 2019-02-14 00:45:52 +0100
+Processing by AttendancesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Started GET "/attendances/new?event=2" for 127.0.0.1 at 2019-02-14 00:48:48 +0100
+Processing by AttendancesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.5ms)
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 178525ms (Views: 1699.3ms | ActiveRecord: 0.6ms)
+
+
+Completed 200 OK in 1660ms (Views: 427.9ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 00:48:53 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 157ms (Views: 69.8ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/attendances/new?event=2" for 127.0.0.1 at 2019-02-14 00:48:55 +0100
+Processing by AttendancesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:14
+Completed 404 Not Found in 8ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'={:id=>2}):
+  
+app/controllers/attendances_controller.rb:14:in `new'
+Started GET "/attendances/new?event=2" for 127.0.0.1 at 2019-02-14 00:49:23 +0100
+Processing by AttendancesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/attendances_controller.rb:14
+  Rendering attendances/new.html.erb within layouts/application
+  Rendered attendances/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34997ms (Views: 34.5ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 00:57:34 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (44.2ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 21.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `current_user' for #<Event:0x00007f66a44b72d0>):
+    29: <p><%=@event.attendances.length%></p>
+    30: 
+    31: <% if @subscriber %>
+    32:   <%= link_to "Inscris toi", {:controller => "charges", :action => "new", :event => @event.id, :user => @event.current_user.id}, class:"btn btn-outline-primary" %>
+    33: <% elsif @admin %>
+    34:   <%= link_to "Voir les participants", {:controller => "attendances", :action => "index", :event => @event.id}, class:"btn btn-outline-primary" %>
+    35: <%end%>
+  
+app/views/events/show.html.erb:32:in `_app_views_events_show_html_erb__4058450913405042195_70039409897180'
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 00:58:19 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (4.7ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 70ms (Views: 47.0ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 00:58:22 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (3.2ms)
+Completed 200 OK in 39ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 00:58:22 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.6ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:00:51 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.6ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 53ms (Views: 46.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:05:26 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (3884.7ms)
+Completed 500 Internal Server Error in 45597ms (ActiveRecord: 7.4ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:10: syntax error, unexpected '<'
+</label>
+^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:11: unknown regexp options - artcl
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:13: syntax error, unexpected '<'
+<script src="https://checkout....
+^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:13: syntax error, unexpected keyword_class, expecting ')'
+...t.stripe.com/checkout.js" class="stripe-button"
+...                          ^~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:17: syntax error, unexpected '<'
+data-locale="auto"></script>
+                   ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:22: unterminated regexp meets end of file
+          end
+             ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:22: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/charges/new.html.erb:10: syntax error, unexpected '<'
+app/views/charges/new.html.erb:11: unknown regexp options - artcl
+app/views/charges/new.html.erb:13: syntax error, unexpected '<'
+app/views/charges/new.html.erb:13: syntax error, unexpected keyword_class, expecting ')'
+app/views/charges/new.html.erb:17: syntax error, unexpected '<'
+app/views/charges/new.html.erb:22: unterminated regexp meets end of file
+app/views/charges/new.html.erb:22: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 01:06:36 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (1.3ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 4381ms (Views: 2866.5ms | ActiveRecord: 352.4ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:06:54 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.0ms)
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:10: syntax error, unexpected '<'
+</label>
+^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:11: unknown regexp options - artcl
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:13: syntax error, unexpected '<'
+<script src="https://checkout....
+^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:13: syntax error, unexpected keyword_class, expecting ')'
+...t.stripe.com/checkout.js" class="stripe-button"
+...                          ^~~~~
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:17: syntax error, unexpected '<'
+data-locale="auto"></script>
+                   ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:22: unterminated regexp meets end of file
+          end
+             ^
+/home/guillaume/Documents/THP/projets/Eventbrite_J1/app/views/charges/new.html.erb:22: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/charges/new.html.erb:10: syntax error, unexpected '<'
+app/views/charges/new.html.erb:11: unknown regexp options - artcl
+app/views/charges/new.html.erb:13: syntax error, unexpected '<'
+app/views/charges/new.html.erb:13: syntax error, unexpected keyword_class, expecting ')'
+app/views/charges/new.html.erb:17: syntax error, unexpected '<'
+app/views/charges/new.html.erb:22: unterminated regexp meets end of file
+app/views/charges/new.html.erb:22: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:09:57 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (2.0ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 326ms (Views: 318.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:10:47 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.7ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 50ms (Views: 45.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:11:08 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.6ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 53ms (Views: 40.6ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-14 01:22:32 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (20.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (69.8ms)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 589ms (Views: 499.2ms | ActiveRecord: 51.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-14 01:22:41 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-02-14 01:22:44 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 110ms (Views: 65.9ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-14 01:22:58 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (3.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 77ms (Views: 70.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2019-02-14 01:23:01 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (1.8ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (155.2ms)
+Completed 200 OK in 383ms (Views: 215.7ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/attendances/index?event=1" for 127.0.0.1 at 2019-02-14 01:23:02 +0100
+Processing by AttendancesController#index as HTML
+  Parameters: {"event"=>"1"}
+  Rendering attendances/index.html.erb within layouts/application
+  [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/attendances/index.html.erb:8
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/attendances/index.html.erb:14
+  Rendered attendances/index.html.erb within layouts/application (19.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 151ms (Views: 110.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 01:23:06 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.6ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (1.0ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 87ms (Views: 56.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:23:08 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (11.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 86ms (Views: 66.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:24:03 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9DvjBB0W5JP8wNfzEQ4YbfEmWDk7/JKo7L9R0K2LRGsGAkHY0ywDzC+itWhFlR+a0fmh0o11Bim2L/zQ5FySuw==", "stripeToken"=>"tok_1E3Y1FJmmzBaWyW96uGGPUnT", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `price' for nil:NilClass):
+  
+app/controllers/charges_controller.rb:13:in `create'
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:24:39 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (2.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 112ms (Views: 67.2ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-14 01:25:00 +0100
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:13
+  Rendered events/index.html.erb within layouts/application (11.4ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 64ms (Views: 52.8ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 01:25:04 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (1.9ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (0.3ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 91ms (Views: 59.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:25:06 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.0ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 41ms (Views: 36.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-02-14 01:25:13 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."creator_id" = $1[0m  [["creator_id", 2]]
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 68ms (Views: 58.4ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:25:39 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JEJXRqA3laGIU5AP0KnxpGBy7iXG2yLvxrvLb/meoM4JVNUtEXTpCw2C3XJTl14vh2nPH+BSgRCA0OdryQ7giA==", "stripeToken"=>"tok_1E3Y2mJmmzBaWyW9NiYix37B", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `price' for nil:NilClass):
+  
+app/controllers/charges_controller.rb:13:in `create'
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:26:50 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (2.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 96ms (Views: 68.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:27:15 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NIGo6YcDY9yWdrPclpddP3L3BHBODlBF7Z9VPLXdFHIZlyqCNkAfdhOn/qEVqfK0lewlSmiH87qr9Hk4hU1UNA==", "stripeToken"=>"tok_1E3Y4KJmmzBaWyW9SHw6wJir", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+Unpermitted parameters: :utf8, :authenticity_token, :stripeToken, :stripeTokenType, :stripeEmail
+Completed 404 Not Found in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event without an ID):
+  
+app/controllers/charges_controller.rb:14:in `create'
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:27:41 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 100ms (Views: 66.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:28:02 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DKyWhea5SytvitWQkyyTWDrUWGY8KxGnqSQpqNYaObohuhTuV/o3gepbmO0QEjzT3c95XBqisljvTwWs5op5/A==", "stripeToken"=>"tok_1E3Y55JmmzBaWyW996kiYpWJ", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+Unpermitted parameters: :utf8, :authenticity_token, :stripeToken, :stripeTokenType, :stripeEmail
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Event without an ID):
+  
+app/controllers/charges_controller.rb:14:in `create'
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:33:33 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.8ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 123ms (Views: 75.2ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:39:16 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 120ms (Views: 71.3ms | ActiveRecord: 17.0ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:39:41 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YDGzNCNUS46BJKrdBVAp5natpDD9HP9TZE8X1TyqniZNJzFfkhc3JAT156CGboZtkbaFCtuVXKwiJDvRDDreYA==", "stripeToken"=>"tok_1E3YGMJmmzBaWyW9epKnVZ7C", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `price' for nil:NilClass):
+  
+app/controllers/charges_controller.rb:14:in `create'
+Started PUT "/__web_console/repl_sessions/5ab9963dbdf805fa4063d58b955271ff" for 127.0.0.1 at 2019-02-14 01:39:51 +0100
+Started PUT "/__web_console/repl_sessions/5ab9963dbdf805fa4063d58b955271ff" for 127.0.0.1 at 2019-02-14 01:39:52 +0100
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:42:58 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.9ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 144ms (Views: 77.4ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:43:21 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tkydcMijVBvGAsdqNT7a/z7d7k7SveXzeJGKnNn6ou+bWh8beeAosUPTihe2AHV02cbPdPQ0Rgw++qaY6WriqQ==", "stripeToken"=>"tok_1E3YJuJmmzBaWyW9JV81wyYa", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `price' for nil:NilClass):
+  
+app/controllers/charges_controller.rb:15:in `create'
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:46:14 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (2.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 96ms (Views: 70.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:46:38 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jgFzAczryw7dfwYAqeMKuny15SyvftgzIw9Jx1ktk7mjF/Fqfai3pFiuS30q3aUxm67EFon3e8xlZGXDab3T/w==", "stripeToken"=>"tok_1E3YN5JmmzBaWyW9dziCIHEx", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+  Rendering charges/create.html.erb within layouts/charges
+  Rendered charges/create.html.erb within layouts/charges (1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 2650ms (Views: 44.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:48:03 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 106ms (Views: 67.7ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:48:21 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (4.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 56ms (Views: 47.7ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/charges/new" for 127.0.0.1 at 2019-02-14 01:48:49 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/charges/new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:49:02 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:50:04 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xsSEkFyZfpR0aycgLsACUBhv6VTTJg6bpDvTK6K4nLHr0gb77doCPvG6al2t/q3b/3TIbvWvrWTiUP8vkijc9w==", "stripeToken"=>"tok_1E3YQPJmmzBaWyW9eLd8Pxu5", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+  Rendering charges/create.html.erb within layouts/charges
+  Rendered charges/create.html.erb within layouts/charges (0.6ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 2148ms (Views: 44.2ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/charges" for 127.0.0.1 at 2019-02-14 01:52:02 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ChargesController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:52:09 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 54ms (Views: 45.9ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2019-02-14 01:52:17 +0100
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/guillaume/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mAttendance Load (0.5ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:21
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Attendance Load (0.0ms)[0m  [1m[34mSELECT  "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1 AND "attendances"."user_id" = $2 LIMIT $3[0m  [["event_id", 2], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/events/show.html.erb:26
+  [1m[36mAttendance Load (1.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:29
+  Rendered events/show.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 103ms (Views: 67.2ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:52:28 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 52ms (Views: 46.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:52:51 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I/VBUrtTlWy7EK218q3IMTCllKgjCvjuIGy9cR9mYTIO48M5ChDpxj7B4Mhxk2e61761kgWDWxFmB5F1L/YhdA==", "stripeToken"=>"tok_1E3YT6JmmzBaWyW9Nmfe9AXX", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+  Rendering charges/create.html.erb within layouts/charges
+  Rendered charges/create.html.erb within layouts/charges (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 2351ms (Views: 45.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:53:59 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (1.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:54:29 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ujIvvtissRlfPvzWRwox2kG8zRstRGq9Jh/B3x07wzOXJK3Vae/Ns9rvsavENJ5RpqfsIQvNyUJgdO3bLauDdQ==", "stripeToken"=>"tok_1E3YUgJmmzBaWyW9YxcREQgg", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+  Rendering charges/create.html.erb within layouts/charges
+  Rendered charges/create.html.erb within layouts/charges (1.1ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 2459ms (Views: 43.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/charges/new?event=2" for 127.0.0.1 at 2019-02-14 01:55:25 +0100
+Processing by ChargesController#new as HTML
+  Parameters: {"event"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/charges_controller.rb:8
+  Rendering charges/new.html.erb within layouts/charges
+  Rendered charges/new.html.erb within layouts/charges (2.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 63ms (Views: 58.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/charges" for 127.0.0.1 at 2019-02-14 01:55:59 +0100
+Processing by ChargesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sRMHjD/e3LGsU9zdiW1/x+NY4arC/AUss0aLm8RzcUacBYXnjp2gGymCkaAKU9BMBEPAkOR1ptP1Laef9OMxAA==", "stripeToken"=>"tok_1E3YW8JmmzBaWyW9uzE5qnnK", "stripeTokenType"=>"card", "stripeEmail"=>"betseyking@kiehn.net"}
+  Rendering charges/create.html.erb within layouts/charges
+  Rendered charges/create.html.erb within layouts/charges (0.5ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/charges.html.erb:26
+Completed 200 OK in 2638ms (Views: 40.0ms | ActiveRecord: 4.3ms)
+
+
