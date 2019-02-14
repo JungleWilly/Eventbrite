@@ -31522,3 +31522,28 @@ Migrating to AddDeviseToUsers (20190212120929)
   ↳ db/seeds.rb:26
   [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:26
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Create (1.1ms)[0m  [1m[32mINSERT INTO "attendances" ("stripe_customer_id", "user_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["stripe_customer_id", "Molestiae libero ea mollitia."], ["user_id", 4], ["event_id", 8], ["created_at", "2019-02-14 06:10:41.635569"], ["updated_at", "2019-02-14 06:10:41.635569"]]
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Create (0.8ms)[0m  [1m[32mINSERT INTO "attendances" ("stripe_customer_id", "user_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["stripe_customer_id", "Qui dolor sequi explicabo."], ["user_id", 7], ["event_id", 12], ["created_at", "2019-02-14 06:11:48.282864"], ["updated_at", "2019-02-14 06:11:48.282864"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Create (0.6ms)[0m  [1m[32mINSERT INTO "attendances" ("stripe_customer_id", "user_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["stripe_customer_id", "Optio aut enim ut."], ["user_id", 8], ["event_id", 8], ["created_at", "2019-02-14 06:12:16.957070"], ["updated_at", "2019-02-14 06:12:16.957070"]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAttendance Create (0.7ms)[0m  [1m[32mINSERT INTO "attendances" ("stripe_customer_id", "user_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["stripe_customer_id", "Enim et tempore aliquid."], ["user_id", 9], ["event_id", 16], ["created_at", "2019-02-14 06:12:22.946662"], ["updated_at", "2019-02-14 06:12:22.946662"]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "attendances" ON "users"."id" = "attendances"."user_id" WHERE "attendances"."event_id" = $1[0m  [["event_id", 16]]
+  Rendering user_mailer/attendance_send.html.erb within layouts/mailer
+  Rendered user_mailer/attendance_send.html.erb within layouts/mailer (1.1ms)
+UserMailer#attendance_send: processed outbound mail in 107.6ms
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m

@@ -1,8 +1,8 @@
 class Attendance < ApplicationRecord
-  #after_create :attendance_send
+  after_create :more_participant_send
 
-  def attendance_send
-    UserMailer.new_attendance(self).deliver_now
+  def more_participant_send
+    UserMailer.attendance_send(event, event.creator, user).deliver_now
   end
   
   belongs_to :user
