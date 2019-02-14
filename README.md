@@ -1,24 +1,5 @@
-# README
+lien site heroku : https://event-brite.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+tu connais la chanson pour que tout se passe bien.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ej voulais faire un README.MD QUI DECHIRE !!!!! mais vu l'heure (7h25)je vais plutôt faire une sieste ahah
