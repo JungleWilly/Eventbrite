@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
 
     @url= 'http://bebeloued.fr/login'
 
-    mail(to: @user.email, subject: 'Bienvenue chez nous !')
+    #mail(to: @user.email, subject: 'Bienvenue chez nous !')
   end
 
   def new_attendance(attendance)

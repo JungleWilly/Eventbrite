@@ -1,1 +1,3 @@
 <h2>Thanks, you paid <strong>$<%= session[:price] / 100 %></strong>!</h2> 
+
+<%= link_to "voir l'event", event_path(@event_id), class:"btn btn-outline-primary" %>
